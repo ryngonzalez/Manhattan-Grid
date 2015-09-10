@@ -6,7 +6,6 @@ function prefix(string) {
 
 class Cell extends Component {
   render() {
-
     const classes = [
       'GridCell',
       prefix(this.props.size),
@@ -22,11 +21,13 @@ class Cell extends Component {
 }
 
 Cell.propTypes = {
-  size: PropTypes.string
+  size: PropTypes.string,
+  children: PropTypes.element.isRequired
 }
 
 Cell.defaultProps = {
-  size: 'full'
+  size: 'full',
+  children: (() => <div>Empty Cell</div>)
 }
 
 export default Cell

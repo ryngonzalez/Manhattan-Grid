@@ -2,16 +2,24 @@ import React, { Component, PropTypes } from 'react'
 
 
 function prefix(string) {
-  return `GridContainer--${string}`
+  return `GridGroup--${string}`
 }
 
 function classNameForOption(option, validOptions, type) {
   if (option in validOptions) {
     return validOptions[option]
   } else {
-    console.error(`Incorrect ${type} applied to GridContainer.`)
+    console.error(`Incorrect ${type} applied to GridGroup.`)
     return ''
   }
+}
+
+const JUSTIFICATIONS = {
+  'BETWEEEN': prefix('spaceBetween'),
+  'AROUND': prefix('spaceAround'),
+  'CENTER': prefix('justifycenter'),
+  'START': prefix('justifyStart'),
+  'END': prefix('justifyEnd')
 }
 
 const DIRECTIONS = {
@@ -29,13 +37,14 @@ const WRAP = {
   'END': prefix('end')
 }
 
-class Container extends Component {
+class Group extends Component {
   render() {
     const classes = [
-      'GridContainer',
+      'GridGroup',
       direction(),
       alignment(),
       wrap(),
+      justification(),
       this.props.className
     ].join(' ')
 
@@ -57,24 +66,32 @@ class Container extends Component {
           alignment = align.toUpperCase()
     return classNameForOption(alignment, ALIGNMENTS, 'alignment')
   }
-  alignment() {
+
+  wrap() {
     let { wrap } = this.props
         wrap = wrap.toUpperCase()
     return classNameForOption(wrap, WRAPS, 'wrap')
   }
 
+  justification() {
+    let { justify } = this.props
+        justification = justify.toUpperCase()
+    return classNameForOption(justification, JUSTIFICATIONS, 'justification')
+  }
 }
 
-Container.defaultProps = {
+Group.defaultProps = {
   direction: 'row',
   align: 'start',
-  wrap: 'wrap'
+  wrap: 'wrap',
+  justify: 'start'
 }
 
-Container.propTypes = {
+Group.propTypes = {
   direction: PropTypes.string,
   align: PropTypes.string,
-  wrap: PropTypes.string
+  wrap: PropTypes.string,
+  justify: PropTypes.string
 }
 
-export default Container
+export default Group

@@ -3,57 +3,84 @@
 }
 
 /****************************
-* Grid Container
+* Grid Group
 *****************************/
 
-.GridContainer {
+.GridGroup {
   display: flex;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 
 /****************************
-* Grid Container -- Alignment
+* Grid Group -- Alignment
 *****************************/
 
-.GridContainer--alignStart {
+.GridGroup--alignStart {
   align-items: flex-start;
 }
 
-.GridContainer--alignCenter {
+.GridGroup--alignCenter {
   align-items: center;
 }
 
-.GridContainer--alignEnd {
+.GridGroup--alignEnd {
   align-items: flex-end;
 }
 
 
 /****************************
-* Grid Container -- Direction
+* Grid Group -- Justify
 *****************************/
 
-.GridContainer--column {
+.GridGroup--spaceBetween {
+  justify-content: space-between;
+}
+
+.GridGroup--spaceAround {
+  justify-content: space-around;
+}
+
+.GridGroup--justifyCenter {
+  justify-content: center;
+}
+
+.GridGroup--justifyStart {
+  justify-content: flex-start;
+}
+
+.GridGroup--justifyEnd {
+  justify-content: flex-end;
+}
+
+
+/****************************
+* Grid Group -- Direction
+*****************************/
+
+.GridGroup--column {
   flex-direction: column;
 }
 
-.GridContainer--row {
+.GridGroup--row {
   flex-direction: row;
 }
 
 
 /****************************
-* Grid Container -- Wrapping
+* Grid Group -- Wrapping
 *****************************/
 
-.GridContainer--wrap {
+.GridGroup--wrap {
   flex-wrap: wrap;
 }
 
-.GridContainer--nowrap {
+.GridGroup--nowrap {
   flex-wrap: nowrap;
 }
 
-.GridContainer--wrapreverse {
+.GridGroup--wrapreverse {
   flex-wrap: wrap-reverse;
 }
 
@@ -62,44 +89,49 @@
 * Grid Cell Sizes
 *****************************/
 
+.GridCell {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .GridCell--full {
-  flex: 1 0 100%;
+  flex-basis: 100%;
 }
 
 .GridCell--half {
-  flex: 1 0 50%;
+  flex-basis: 50%;
 }
 
 .GridCell--third {
-  flex: 1 0 33.33%;
+  flex-basis: 33.33%;
 }
 
 .GridCell--quarter {
-  flex: 1 0 25%;
+  flex-basis: 25%;
 }
 
 .GridCell--fifth {
-  flex: 1 0 20%;
+  flex-basis: 20%;
 }
 
 .GridCell--sixth {
-  flex: 1 0 16.67%;
+  flex-basis: 16.67%;
 }
 
 .GridCell--eighth {
-  flex: 1 0 12.5%;
+  flex-basis: 12.5%;
 }
 
 .GridCell--tenth {
-  flex: 1 0 10%;
+  flex-basis: 10%;
 }
 
 .GridCell--twelfth {
-  flex: 1 0 8.33%;
+  flex-basis: 8.33%;
 }
 
 .GridCell--sixteenth {
-  flex: 1 0 6.25%;
+  flex-basis: 6.25%;
 }
 
 

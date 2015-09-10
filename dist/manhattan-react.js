@@ -35,7 +35,6 @@ var Cell = (function (_Component) {
   _createClass(Cell, [{
     key: 'render',
     value: function render() {
-
       var classes = ['GridCell', prefix(this.props.size), this.props.className].join(' ');
 
       return _react2['default'].createElement(
@@ -50,11 +49,19 @@ var Cell = (function (_Component) {
 })(_react.Component);
 
 Cell.propTypes = {
-  size: _react.PropTypes.string
+  size: _react.PropTypes.string,
+  children: _react.PropTypes.element.isRequired
 };
 
 Cell.defaultProps = {
-  size: 'full'
+  size: 'full',
+  children: function children() {
+    return _react2['default'].createElement(
+      'div',
+      null,
+      'Empty Cell'
+    );
+  }
 };
 
 exports['default'] = Cell;
@@ -82,17 +89,25 @@ var _react = require('react');
 var _react2 = _interopRequireDefault(_react);
 
 function prefix(string) {
-  return 'GridContainer--' + string;
+  return 'GridGroup--' + string;
 }
 
 function classNameForOption(option, validOptions, type) {
   if (option in validOptions) {
     return validOptions[option];
   } else {
-    console.error('Incorrect ' + type + ' applied to GridContainer.');
+    console.error('Incorrect ' + type + ' applied to GridGroup.');
     return '';
   }
 }
+
+var JUSTIFICATIONS = {
+  'BETWEEEN': prefix('spaceBetween'),
+  'AROUND': prefix('spaceAround'),
+  'CENTER': prefix('justifycenter'),
+  'START': prefix('justifyStart'),
+  'END': prefix('justifyEnd')
+};
 
 var DIRECTIONS = {
   'ROW': prefix('row'),
@@ -109,19 +124,19 @@ var WRAP = {
   'END': prefix('end')
 };
 
-var Container = (function (_Component) {
-  _inherits(Container, _Component);
+var Group = (function (_Component) {
+  _inherits(Group, _Component);
 
-  function Container() {
-    _classCallCheck(this, Container);
+  function Group() {
+    _classCallCheck(this, Group);
 
-    _get(Object.getPrototypeOf(Container.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Group.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _createClass(Container, [{
+  _createClass(Group, [{
     key: 'render',
     value: function render() {
-      var classes = ['GridContainer', direction(), alignment(), wrap(), this.props.className].join(' ');
+      var classes = ['GridGroup', direction(), alignment(), wrap(), justification(), this.props.className].join(' ');
 
       return _react2['default'].createElement(
         'div',
@@ -145,31 +160,51 @@ var Container = (function (_Component) {
       return classNameForOption(alignment, ALIGNMENTS, 'alignment');
     }
   }, {
-    key: 'alignment',
-    value: function alignment() {
+    key: 'wrap',
+    value: function wrap() {
       var wrap = this.props.wrap;
 
       wrap = wrap.toUpperCase();
       return classNameForOption(wrap, WRAPS, 'wrap');
     }
+  }, {
+    key: 'justification',
+    value: (function (_justification) {
+      function justification() {
+        return _justification.apply(this, arguments);
+      }
+
+      justification.toString = function () {
+        return _justification.toString();
+      };
+
+      return justification;
+    })(function () {
+      var justify = this.props.justify;
+
+      justification = justify.toUpperCase();
+      return classNameForOption(justification, JUSTIFICATIONS, 'justification');
+    })
   }]);
 
-  return Container;
+  return Group;
 })(_react.Component);
 
-Container.defaultProps = {
+Group.defaultProps = {
   direction: 'row',
   align: 'start',
-  wrap: 'wrap'
+  wrap: 'wrap',
+  justify: 'start'
 };
 
-Container.propTypes = {
+Group.propTypes = {
   direction: _react.PropTypes.string,
   align: _react.PropTypes.string,
-  wrap: _react.PropTypes.string
+  wrap: _react.PropTypes.string,
+  justify: _react.PropTypes.string
 };
 
-exports['default'] = Container;
+exports['default'] = Group;
 module.exports = exports['default'];
 
 },{"react":undefined}],3:[function(require,module,exports){
@@ -181,15 +216,15 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _Container = require('./Container');
+var _Group = require('./Group');
 
-var _Container2 = _interopRequireDefault(_Container);
+var _Group2 = _interopRequireDefault(_Group);
 
 var _Cell = require('./Cell');
 
 var _Cell2 = _interopRequireDefault(_Cell);
 
-exports['default'] = { Container: _Container2['default'], Cell: _Cell2['default'] };
+exports['default'] = { Group: _Group2['default'], Cell: _Cell2['default'] };
 module.exports = exports['default'];
 
-},{"./Cell":1,"./Container":2}]},{},[3]);
+},{"./Cell":1,"./Group":2}]},{},[3]);

@@ -1,4 +1,4 @@
-import Container from './Container'
+import Group from './Group'
 import Cell from './Cell'
 
-export default { Container, Cell }
+export default { Group, Cell }

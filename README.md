@@ -15,13 +15,13 @@ import { Component } from 'react'
 
 class Page extends Component {
   render() {
-    <Container wrap="wrap" align="start">
+    <Group wrap="wrap" align="start">
       {this.props.myArticles.map(article =>
         <Cell size="third">
           <Article {...article} />
         </Cell>
       )}
-    </Container>
+    </Group>
   }
 }
 ```
