@@ -1,0 +1,120 @@
+:root {
+
+}
+
+/****************************
+* Grid Container
+*****************************/
+
+.GridContainer {
+  display: flex;
+}
+
+
+/****************************
+* Grid Container -- Alignment
+*****************************/
+
+.GridContainer--alignStart {
+  align-items: flex-start;
+}
+
+.GridContainer--alignCenter {
+  align-items: center;
+}
+
+.GridContainer--alignEnd {
+  align-items: flex-end;
+}
+
+
+/****************************
+* Grid Container -- Direction
+*****************************/
+
+.GridContainer--column {
+  flex-direction: column;
+}
+
+.GridContainer--row {
+  flex-direction: row;
+}
+
+
+/****************************
+* Grid Container -- Wrapping
+*****************************/
+
+.GridContainer--wrap {
+  flex-wrap: wrap;
+}
+
+.GridContainer--nowrap {
+  flex-wrap: nowrap;
+}
+
+.GridContainer--wrapreverse {
+  flex-wrap: wrap-reverse;
+}
+
+
+/****************************
+* Grid Cell Sizes
+*****************************/
+
+.GridCell--full {
+  flex: 1 0 100%;
+}
+
+.GridCell--half {
+  flex: 1 0 50%;
+}
+
+.GridCell--third {
+  flex: 1 0 33.33%;
+}
+
+.GridCell--quarter {
+  flex: 1 0 25%;
+}
+
+.GridCell--fifth {
+  flex: 1 0 20%;
+}
+
+.GridCell--sixth {
+  flex: 1 0 16.67%;
+}
+
+.GridCell--eighth {
+  flex: 1 0 12.5%;
+}
+
+.GridCell--tenth {
+  flex: 1 0 10%;
+}
+
+.GridCell--twelfth {
+  flex: 1 0 8.33%;
+}
+
+.GridCell--sixteenth {
+  flex: 1 0 6.25%;
+}
+
+
+/****************************
+* Grid Cell Alignment Exceptions
+*****************************/
+
+.GridCell--start {
+  align-self: flex-start;
+}
+
+.GridCell--center {
+  align-self: center;
+}
+
+.GridCell--end {
+  align-self: flex-end;
+}

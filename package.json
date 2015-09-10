@@ -1,0 +1,26 @@
+{
+  "name": "manhattan",
+  "version": "1.0.0",
+  "description": "A grid system for everyone.",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js && browserify src/react/index.js -t babelify --no-bundle-external --outfile dist/manhattan-react.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "grid",
+    "css"
+  ],
+  "author": "Ryan Gonzalez",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^5.8.23",
+    "babelify": "^6.3.0",
+    "browserify": "^11.0.1",
+    "cssnext": "^1.8.4"
+  },
+  "dependencies": {
+    "object-assign": "^4.0.1",
+    "react": "^0.13.3"
+  }
+}

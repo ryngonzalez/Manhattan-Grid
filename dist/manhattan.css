@@ -1,0 +1,178 @@
+/****************************
+* Grid Container
+*****************************/
+
+.GridContainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+
+/****************************
+* Grid Container -- Alignment
+*****************************/
+
+.GridContainer--alignStart {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.GridContainer--alignCenter {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.GridContainer--alignEnd {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+
+/****************************
+* Grid Container -- Direction
+*****************************/
+
+.GridContainer--column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.GridContainer--row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+
+/****************************
+* Grid Container -- Wrapping
+*****************************/
+
+.GridContainer--wrap {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.GridContainer--nowrap {
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+}
+
+.GridContainer--wrapreverse {
+  -webkit-flex-wrap: wrap-reverse;
+      -ms-flex-wrap: wrap-reverse;
+          flex-wrap: wrap-reverse;
+}
+
+
+/****************************
+* Grid Cell Sizes
+*****************************/
+
+.GridCell--full {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 100%;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+}
+
+.GridCell--half {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 50%;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%;
+}
+
+.GridCell--third {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 33.33%;
+      -ms-flex: 1 0 33.33%;
+          flex: 1 0 33.33%;
+}
+
+.GridCell--quarter {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 25%;
+      -ms-flex: 1 0 25%;
+          flex: 1 0 25%;
+}
+
+.GridCell--fifth {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 20%;
+      -ms-flex: 1 0 20%;
+          flex: 1 0 20%;
+}
+
+.GridCell--sixth {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 16.67%;
+      -ms-flex: 1 0 16.67%;
+          flex: 1 0 16.67%;
+}
+
+.GridCell--eighth {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 12.5%;
+      -ms-flex: 1 0 12.5%;
+          flex: 1 0 12.5%;
+}
+
+.GridCell--tenth {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 10%;
+      -ms-flex: 1 0 10%;
+          flex: 1 0 10%;
+}
+
+.GridCell--twelfth {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 8.33%;
+      -ms-flex: 1 0 8.33%;
+          flex: 1 0 8.33%;
+}
+
+.GridCell--sixteenth {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 6.25%;
+      -ms-flex: 1 0 6.25%;
+          flex: 1 0 6.25%;
+}
+
+
+/****************************
+* Grid Cell Alignment Exceptions
+*****************************/
+
+.GridCell--start {
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+}
+
+.GridCell--center {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+}
+
+.GridCell--end {
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+}
